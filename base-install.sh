@@ -33,5 +33,6 @@ sudo chown root:root lecture
 sudo mv lecture /etc/sudoers.d/
 
 # Update all the things
-sudo apt update && sudo apt upgrade -y
+sudo apt update
+DEBIAN_FRONTEND=noninteractive sudo apt upgrade -yq
 exec "$SHELL"
