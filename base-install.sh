@@ -34,5 +34,5 @@ sudo mv lecture /etc/sudoers.d/
 
 # Update all the things
 sudo apt-get update
-DEBIAN_FRONTEND=noninteractive sudo apt-get upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 exec "$SHELL"
