@@ -29,6 +29,7 @@ chmod 644 $HOME/.dircolors
 
 # .groot-lecture
 mkdir -p $HOME/.lectures/
+chmod 755 $HOME/.lectures/
 curl -L -o $HOME/.lectures/.groot-lecture https://raw.githubusercontent.com/joeparis/dotfiles/master/groot-lecture
 chmod 644 $HOME/.lectures/.groot-lecture
 touch $HOME/lecture
