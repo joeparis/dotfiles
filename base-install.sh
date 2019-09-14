@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Make user binaries directories.
+mkdir -p $HOME/bin $HOME/.local/bin/
+
 #!/usr/bin/env bash
 if [ ! -x /usr/bin/curl ]
 then
