@@ -41,6 +41,20 @@ chmod 444 lecture
 sudo chown root:root lecture
 sudo mv lecture /etc/sudoers.d/
 
+# Set up root's .bashrc giving them a scary red prompt and other misc. goodies.
+sudo su
+if [ -f /root/.bashrc ]; then
+    rm /root/.bashrc
+fi
+curl -L -o /root/.bashrc https://raw.githubusercontent.com/joeparis/dotfiles/master/root_bashrc
+chmod 644 /root/.bashrc
+
+if [ -f /root/.dircolors ]; then
+    rm /root/.dircolors
+fi
+curl -L -o /root/.dircolors https://raw.githubusercontent.com/joeparis/dotfiles/master/dircolors
+chmod 644 /root/.dircolors
+
 # Update all the things
 sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
