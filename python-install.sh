@@ -12,4 +12,4 @@ pipx install pydocstyle
 pipx install pycodestyle
 pipx install terminal-colors
 
-echo -e '\n\n## Python pipx\neval "$(register-python-argcomplete pipx)"' >> $HOME/.bashrc
+echo -e '\n## Python pipx\neval "$(register-python-argcomplete pipx)"' >> $HOME/.bashrc
