@@ -4,9 +4,8 @@
 mkdir -p $HOME/bin $HOME/.local/bin/
 
 #!/usr/bin/env bash
-if [ ! -x /usr/bin/curl ]
-then
-        sudo apt install curl
+if [ ! -x /usr/bin/curl ]; then
+    sudo apt install curl
 fi
 
 # .bashrc
