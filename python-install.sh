@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo -H python3 get-pip.py
-yes | rm get-pip.py
+rm get-pip.py
 pip3 install --user pipx
 pipx install black
 pipx install pipenv
