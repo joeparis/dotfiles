@@ -4,14 +4,14 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo -H python3 get-pip.py
 rm get-pip.py
 pip3 install --user pipx
-pipx install black
-pipx install pipenv
-pipx install pytest
-pipx install pylint
-pipx install pydocstyle
-pipx install pycodestyle
-pipx install terminal-colors
-pipx install Pygments
+$HOME/.local/bin/pipx install black
+$HOME/.local/bin/pipx install pipenv
+$HOME/.local/bin/pipx install pytest
+$HOME/.local/bin/pipx install pylint
+$HOME/.local/bin/pipx install pydocstyle
+$HOME/.local/bin/pipx install pycodestyle
+$HOME/.local/bin/pipx install terminal-colors
+$HOME/.local/bin/pipx install Pygments
 
 echo -e '\n## Python pipx\neval "$(register-python-argcomplete pipx)"' >> $HOME/.bashrc
 
