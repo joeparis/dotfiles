@@ -3,6 +3,10 @@
 # Make user binaries directories.
 mkdir -p $HOME/bin $HOME/.local/bin/
 
+# Update all the things
+sudo apt update
+sudo DEBIAN_FRONTEND=noninteractive apt upgrade -y
+
 #!/usr/bin/env bash
 if [ ! -x /usr/bin/curl ]; then
     sudo apt install curl
@@ -55,7 +59,4 @@ fi
 curl -L -o /root/.dircolors https://raw.githubusercontent.com/joeparis/dotfiles/master/dircolors
 chmod 644 /root/.dircolors
 
-# Update all the things
-sudo apt-get update
-sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
-exec "$SHELL"
+# exec "$SHELL"

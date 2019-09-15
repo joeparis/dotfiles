@@ -14,7 +14,7 @@ echo '. "$BASH_IT"/bash_it.sh' >> $HOME/.bashrc
 
 
 # bash-it enable alias apt fuck
-sudo apt install python3-dev python3-pip python3-setuptools -y
+sudo DEBIAN_FRONTEND=noninteractive apt install python3-dev python3-pip python3-setuptools -y
 sudo pip3 install thefuck
 ln -s $HOME/.bash_it/aliases/available/apt.aliases.bash $HOME/.bash_it/enabled/150---apt.aliases.bash
 ln -s $HOME/.bash_it/aliases/available/fuck.aliases.bash $HOME/.bash_it/enabled/150---fuck.aliases.bash
