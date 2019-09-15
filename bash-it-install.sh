@@ -12,7 +12,15 @@ echo -e "\n# Don't check mail when opening terminal.\nunset MAILCHECK" >> $HOME/
 echo -e '\n# Set this to false to turn off version control status checking within the prompt for all themes\nexport SCM_CHECK=true' >> $HOME/.bashrc
 echo '. "$BASH_IT"/bash_it.sh' >> $HOME/.bashrc
 
-. $HOME/.bashrc
 
+# Prime the pump.
+export BASH_IT="$HOME/.bash_it"
+export BASH_IT_THEME="joe1"
+export SCM_CHECK=true
+unset MAILCHECK
+
+"$BASH_IT"/bash_it.sh
+
+# Enable
 bash-it enable alias apt fuck
 bash-it enable plugin explain less-pretty-cat tmux
