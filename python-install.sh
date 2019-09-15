@@ -11,6 +11,7 @@ pipx install pylint
 pipx install pydocstyle
 pipx install pycodestyle
 pipx install terminal-colors
+pipx install Pygments
 
 echo -e '\n## Python pipx\neval "$(register-python-argcomplete pipx)"' >> $HOME/.bashrc
 
