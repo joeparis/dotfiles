@@ -13,14 +13,13 @@ echo -e '\n# Set this to false to turn off version control status checking withi
 echo '. "$BASH_IT"/bash_it.sh' >> $HOME/.bashrc
 
 
-# Prime the pump.
-export BASH_IT="$HOME/.bash_it"
-export BASH_IT_THEME="joe1"
-export SCM_CHECK=true
-unset MAILCHECK
+# bash-it enable alias apt fuck
+sudo apt install python3-dev python3-pip python3-setuptools -y
+sudo pip3 install thefuck
+ln -s $HOME/.bash_it/aliases/available/apt.aliases.bash $HOME/.bash_it/enabled/150---apt.aliases.bash
+ln -s $HOME/.bash_it/aliases/available/fuck.aliases.bash $HOME/.bash_it/enabled/150---fuck.aliases.bash
 
-"$BASH_IT"/bash_it.sh
-
-# Enable
-bash-it enable alias apt fuck
-bash-it enable plugin explain less-pretty-cat tmux
+# bash-it enable plugin explain less-pretty-cat tmux
+ln -s $HOME/.bash_it/plugins/available/explain.plugin.bash $HOME/.bash_it/enabled/250---explain.plugin.bash
+ln -s $HOME/.bash_it/plugins/available/less-pretty-cat.plugin.bash $HOME/.bash_it/enabled/250---less-pretty-cat.plugin.bash
+ln -s $HOME/.bash_it/plugins/available/tmux.plugin.bash $HOME/.bash_it/enabled/250---tmux.plugin.bash
