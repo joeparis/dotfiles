@@ -6,6 +6,7 @@ curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/base-install.
 curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/cli-tooling-install.sh | bash
 curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/python-install.sh | bash
 curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/bash-it-install.sh | bash
+curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/nano-install.sh | bash
 
 # Test if runing in WSL (brittle)
 # if grep -qE "(Microsoft@Microsoft.com)" /proc/version &> /dev/null ; then
