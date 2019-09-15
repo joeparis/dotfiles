@@ -1,0 +1,12 @@
+ set autoindent
+ set constantshow
+ set cutfromcursor
+ set guidestripe 120
+ set linenumbers
+ set mouse
+ set nowrap
+ set stripecolor brightyellow,red
+ set tabsize 4
+ set tabstospaces
+ set multibuffer
+ set unix
