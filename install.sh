@@ -13,9 +13,3 @@ if grep -qE "(Microsoft@Microsoft.com)" /proc/version &> /dev/null ; then
 fi
 
 curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/wrap-up-install.sh | bash
-
-# TODO:
-# Add vim config, at least a decent color scheme and line numbers
-# Add GUI application install/config for full-blown Linux environments
-# Add Ubuntu/Manjaro detection
-# nano configs
