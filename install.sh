@@ -8,7 +8,9 @@ curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/python-instal
 curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/bash-it-install.sh | bash
 
 # Test if runing in WSL (brittle)
-if grep -qE "(Microsoft@Microsoft.com)" /proc/version &> /dev/null ; then
+# if grep -qE "(Microsoft@Microsoft.com)" /proc/version &> /dev/null ; then
+#Less brittle (?) test
+if [ -z "WSLENV" ]; then
     curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/wsl-install.sh | bash
 fi
 
