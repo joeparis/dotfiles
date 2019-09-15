@@ -7,7 +7,6 @@ mkdir -p $HOME/bin $HOME/.local/bin/
 sudo apt update
 sudo DEBIAN_FRONTEND=noninteractive apt upgrade -y
 
-#!/usr/bin/env bash
 if [ ! -x /usr/bin/curl ]; then
     sudo apt install curl
 fi
