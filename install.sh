@@ -7,13 +7,12 @@ curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/cli-tooling-i
 curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/python-install.sh | bash
 curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/bash-it-install.sh | bash
 curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/nano-install.sh | bash
+curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/vim-install.sh | bash
 
 # Test if runing in WSL (brittle)
 # if grep -qE "(Microsoft@Microsoft.com)" /proc/version &> /dev/null ; then
 #Less brittle (?) test
-if [ -z "WSLENV" ]; then
-    curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/wsl-install.sh | bash
-fi
+[ -z $WSLENV ] && curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/wsl-install.sh | bash
 
 # Test for gdm to determine if we're running under a full-blown Linux install with Gnome desktop
 # and, if so, install GUI applications.
