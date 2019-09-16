@@ -12,8 +12,8 @@ $HOME/nano-4.4/./configure --prefix=/usr --enable-all
 $HOME/nano-4.4/make
 sudo $HOME/nano-4.4/make install
 
-sudo rm -rf nano-4.4
-rm nano-4.4.tar.gz
+#sudo rm -rf nano-4.4
+#rm nano-4.4.tar.gz
 
 curl -L https://raw.githubusercontent.com/joeparis/dotfiles/master/nanorc -o $HOME/.nanorc
 
