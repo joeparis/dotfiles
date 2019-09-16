@@ -9,7 +9,7 @@ curl -L https://www.nano-editor.org/dist/v4/nano-4.4.tar.gz -o $HOME/nano-4.4.ta
 tar -xzf nano-4.4.tar.gz
 
 cd $HOME/nano-4.4
-.cconfigure --prefix=/usr --enable-all
+.configure --prefix=/usr --enable-all
 make
 sudo make install
 
