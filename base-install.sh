@@ -35,11 +35,11 @@ chmod 644 $HOME/.dircolors
 # .groot-lecture
 mkdir -p $HOME/.lectures/
 chmod 755 $HOME/.lectures/
-curl -L -o $HOME/.lectures/.groot-lecture https://raw.githubusercontent.com/joeparis/dotfiles/master/groot-lecture
-chmod 644 $HOME/.lectures/.groot-lecture
+curl -L -o $HOME/.lectures/groot-lecture https://raw.githubusercontent.com/joeparis/dotfiles/master/groot-lecture
+chmod 644 $HOME/.lectures/groot-lecture
 touch $HOME/lecture
 echo -e "Defaults\tlecture = always" >> $HOME/lecture
-echo -e "Defaults\tlecture_file = $HOME/.lecture" >> $HOME/lecture
+echo -e "Defaults\tlecture_file = $HOME/.lectures/groot-lecture" >> $HOME/lecture
 chmod 444 lecture
 sudo chown root:root lecture
 sudo mv lecture /etc/sudoers.d/
