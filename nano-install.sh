@@ -8,7 +8,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt install libncursesw5-dev -y
 curl -L https://www.nano-editor.org/dist/v4/nano-4.4.tar.gz -o $HOME/nano-4.4.tar.gz
 tar -xzf nano-4.4.tar.gz
 
-$HOME/nano-4.4/./configure --prefix=/usr --enable-all
+$HOME/nano-4.4/.configure --prefix=/usr --enable-all
 $HOME/nano-4.4/make
 sudo $HOME/nano-4.4/make install
 
