@@ -19,4 +19,4 @@ If installing on WSL, start Ubuntu and execute `$ uuidgen`. Copy the GUID into t
 
 * Add GUI application install/config for full-blown Linux environments
 * Add Ubuntu/Manjaro detection
-* nano syntax highlighting
+* update GROFF to one that speaks HTML *before* installing nano 4.4
