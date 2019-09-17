@@ -90,7 +90,7 @@ shopt -s histappend
 export HISTCONTROL=ignoreboth:erasedups
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000
-export HISTIGNORE='ls:la:ll:bg:fg:history*:exit:*--help'
+export HISTIGNORE='ls:la:ll:l:bg:fg:history*:exit:*--help'
 export HISTTIMEFORMAT='%F %T '
 
 ## Add a splash of color.
