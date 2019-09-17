@@ -11,6 +11,6 @@ alias pbpaste='xclip -selection clipboard -o'
 
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
+alias free='free -h'                      # show sizes in human-readable sizes
 alias np='nano -w PKGBUILD'
 alias more=less
