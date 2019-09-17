@@ -16,6 +16,7 @@ esac
 TZ='America/Los_Angeles'; export TZ
 
 ## Set system editor.
+hash code-insiders 2>/dev/null && export VISUAL=code-insiders
 hash vim 2>/dev/null && export EDITOR=vim
 
 ## Build a better bash.
