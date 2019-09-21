@@ -11,10 +11,9 @@ sudo pacman -Syyu
 
 ## Base Install
 
-
 mkdir -p $HOME/bin $HOME/.local/bin/
 
-sudo pamac install bash-completion
+yes | sudo pamac install bash-completion
 
 if [ -f "$HOME/.bashrc" ]; then
     mv "$HOME/.bashrc" "$HOME/.bashrc-original"
@@ -71,9 +70,9 @@ chmod 644 /root/.dircolors
 
 ## CLI Tooling
 
-sudo pamac install cowsay fortune-mod glances htop httpie imagemagick lolcat most pandoc-citeproc pandoc-crossref python-argcomplete texlive-most biber texmaker tmux xclip youtube-dl pandoc
+yes | sudo pamac install cowsay fortune-mod glances htop httpie imagemagick lolcat most pandoc-citeproc pandoc-crossref python-argcomplete texlive-most biber texmaker tmux xclip youtube-dl pandoc
 
-pamac build toilet toilet-fonts
+yes | pamac build toilet toilet-fonts
 
 ## Python
 
@@ -121,7 +120,7 @@ wget -O - https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | s
 
 ## VIM
 
-sudo pamac install vim
+yes | sudo pamac install vim
 
 mkdir -p $HOME/.vim/colors/
 
@@ -135,20 +134,20 @@ wget -O "$HOME/.vimrc" https://raw.githubusercontent.com/joeparis/dotfiles/maste
 
 ## GUI Tooling
 
-sudo pamac install asciinema cool-retro-term dconf-editor gimp handbrake handbrake-cli inkscape kdenlive krita obs-studio peek simplescreenrecorder perl-term-animation perl-tk tilix ttf-fira-code ttf-font-awesome
+yes | sudo pamac install asciinema cool-retro-term dconf-editor gimp handbrake handbrake-cli inkscape kdenlive krita obs-studio peek simplescreenrecorder perl-term-animation perl-tk tilix ttf-fira-code ttf-font-awesome
 
-sudo pamac bless build otf-fira-code-symbol shutter
+yes | sudo pamac bless build otf-fira-code-symbol shutter
 
 ### VSCode Insiders
 
-pamac build visual-studio-code-insiders
+yes | pamac build visual-studio-code-insiders
 wget -O - http://bit.ly/30fJShW > .config/Code\ -\ Insiders/User/settings.json
 code-insiders --install-extension Shan.code-settings-sync
 
 ### screenkey
 
-pamac build screenkey-git
-sudo pamac install libappindicator-gtk2 libappindicator-gtk3 python2-libappindicator
+yes | pamac build screenkey-git
+yes | sudo pamac install libappindicator-gtk2 libappindicator-gtk3 python2-libappindicator
 
 ### Thonny
 
@@ -156,7 +155,7 @@ bash <(wget -O - https://thonny.org/installer-for-linux)
 
 ### Google Chrome **_(optional)_**
 
-pamac build google-chrome google-chrome-dev
+yes | pamac build google-chrome google-chrome-dev
 
 ## Wrap Up
 
