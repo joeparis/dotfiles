@@ -26,6 +26,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
+
 # If set, the pattern "**" used in a pathname expansion context will match all
 # files and zero or more directories and subdirectories
 shopt -s globstar
@@ -147,4 +151,3 @@ export DOCKER_HOST=tcp://0.0.0.0:2375
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
-
