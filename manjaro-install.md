@@ -1,19 +1,20 @@
-#!/usr/bin/env bash
 # Manjaro Setup
 
 ## Install Script
 
-set -e
-
-sudo pacman -Syyu
+```shell
+$ set -e
+$ sudo pacman -Syyu
+```
 
 # start calling scripts
 
 ## Base Install
 
+```shell
 mkdir -p $HOME/bin $HOME/.local/bin/
 
-yes | sudo pamac install bash-completion
+sudo pamac install bash-completion
 
 if [ -f "$HOME/.bashrc" ]; then
     mv "$HOME/.bashrc" "$HOME/.bashrc-original"
@@ -67,13 +68,17 @@ fi
 
 wget -O /root/.dircolors https://raw.githubusercontent.com/joeparis/dotfiles/master/dircolors
 chmod 644 /root/.dircolors
+```
 
 ## CLI Tooling
 
-yes | sudo pamac install cowsay fortune-mod glances htop httpie imagemagick lolcat most pandoc-citeproc pandoc-crossref python-argcomplete texlive-most biber texmaker tmux xclip youtube-dl pandoc
+```shell
+sudo pamac install cowsay fortune-mod glances htop httpie imagemagick lolcat most pandoc-citeproc pandoc-crossref python-argcomplete texlive-most biber texmaker tmux xclip youtube-dl pandoc
 
-yes | pamac build toilet toilet-fonts
+pamac build toilet toilet-fonts
+```
 
+```shell
 ## Python
 
 wget -O get-pip.py https://bootstrap.pypa.io/get-pip.py
@@ -91,9 +96,11 @@ pip3 install --user pipx
 "$HOME/.local/bin/pipx" install Pygments
 
 echo -e '\n## Python pipx\neval "$(register-python-argcomplete pipx)"' >> "$HOME/.bashrc"
+```
 
 ## Bash-it
 
+```shell
 git clone --depth=1 https://github.com/Bash-it/bash-it.git "$HOME/.bash_it"
 "$HOME/.bash_it/install.sh" --no-modify-config
 
@@ -111,16 +118,20 @@ ln -s "$HOME/.bash_it/aliases/available/fuck.aliases.bash" "$HOME/.bash_it/enabl
 ln -s "$HOME/.bash_it/plugins/available/explain.plugin.bash" "$HOME/.bash_it/enabled/250---explain.plugin.bash"
 ln -s "$HOME/.bash_it/plugins/available/less-pretty-cat.plugin.bash" "$HOME/.bash_it/enabled/250---less-pretty-cat.plugin.bash"
 ln -s "$HOME/.bash_it/plugins/available/tmux.plugin.bash" "$HOME/.bash_it/enabled/250---tmux.plugin.bash"
+```
 
 ## nano
 
+```shell
 wget -O "$HOME/.nanorc" https://raw.githubusercontent.com/joeparis/dotfiles/master/nanorc
 
 wget -O - https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
+```
 
 ## VIM
 
-yes | sudo pamac install vim
+```shell
+sudo pamac install vim
 
 mkdir -p $HOME/.vim/colors/
 
@@ -131,52 +142,65 @@ wget -O "$HOME/.vim/colors/solarized8_flat.vim" https://raw.githubusercontent.co
 wget -O "$HOME/.vim/colors/solarized8_high.vim" https://raw.githubusercontent.com/lifepillar/vim-solarized8/master/colors/solarized8_high.vim
 wget -O "$HOME/.vim/colors/solarized8_low.vim" https://raw.githubusercontent.com/lifepillar/vim-solarized8/master/colors/solarized8_low.vim
 wget -O "$HOME/.vimrc" https://raw.githubusercontent.com/joeparis/dotfiles/master/vimrc
+```
+```shell
 
 ## GUI Tooling
 
-yes | sudo pamac install asciinema cool-retro-term dconf-editor gimp handbrake handbrake-cli inkscape kdenlive krita obs-studio peek simplescreenrecorder perl-term-animation perl-tk tilix ttf-fira-code ttf-font-awesome
+```
+```shell
+sudo pamac install asciinema cool-retro-term dconf-editor gimp handbrake handbrake-cli inkscape kdenlive krita obs-studio peek simplescreenrecorder perl-term-animation perl-tk tilix ttf-fira-code ttf-font-awesome
 
-yes | sudo pamac bless build otf-fira-code-symbol shutter
+sudo pamac bless build otf-fira-code-symbol shutter
+```
 
 ### VSCode Insiders
 
-yes | pamac build visual-studio-code-insiders
+```shell
+pamac build visual-studio-code-insiders
 wget -O - http://bit.ly/30fJShW > .config/Code\ -\ Insiders/User/settings.json
 code-insiders --install-extension Shan.code-settings-sync
+```
 
 ### screenkey
 
-yes | pamac build screenkey-git
-yes | sudo pamac install libappindicator-gtk2 libappindicator-gtk3 python2-libappindicator
+```shell
+pamac build screenkey-git
+sudo pamac install libappindicator-gtk2 libappindicator-gtk3 python2-libappindicator
+```
 
 ### Thonny
 
+```shell
 bash <(wget -O - https://thonny.org/installer-for-linux)
 
 ### Google Chrome **_(optional)_**
 
-yes | pamac build google-chrome google-chrome-dev
+pamac build google-chrome google-chrome-dev
+```
 
 ## Wrap Up
 
+```shell
 wget -O - https://raw.githubusercontent.com/joeparis/dotfiles/master/wrap-up-install.sh | bash
+```
 
 ## Misc.
 
-echo "* Configure terminal(s) to be 132x42 characters, change font(?), and fix color scheme"
-echo "  * Gnome Terminal"
-echo "    ![Gnome Terminal color settings](gnome-terminal-settings.png "Gnome Terminal")"
-echo "  * Tilix"
-echo "    ![Tilix color settings](tilix-settings.png "Tilix")"
-echo "* Enable dash to dock extension"
-echo "  * Turn on intelligent autohide"
-echo "  * Intelligent autohide settings:"
-echo "    * Turn off dodge windows"
-echo "  * Turn off panel mode"
-echo "  * Adjust icon size"
-echo "* Install gnome extensions add-on in Firefox and `sudo pacman -S chrome-gnome-shell`"
-echo "* Install **caffeine**, **bing wallpaper changer**, and **icon area horizontal spacing** "extensions
-echo "* To fix Gnome grabbing ctrl+alt+up_arrow and ctrl+alt+down_arrow,"
-echo "  * open `dconf`"
-echo "  * navigate to `/org/gnome/desktop/wm/keybindings/`"
-echo "  * edit `switch-to-workspace-up` and `switch-to-workspace-down`"
+* Configure terminal(s) to be 132x42 characters, change font(?), and fix color scheme"
+  * Gnome Terminal"
+    ![Gnome Terminal color settings](gnome-terminal-settings.png "Gnome Terminal")"
+  * Tilix"
+    ![Tilix color settings](tilix-settings.png "Tilix")"
+* Enable dash to dock extension"
+  * Turn on intelligent autohide"
+  * Intelligent autohide settings:"
+    * Turn off dodge windows"
+  * Turn off panel mode"
+  * Adjust icon size"
+* Install gnome extensions add-on in Firefox and `sudo pacman -S chrome-gnome-shell`"
+* Install **caffeine**, **bing wallpaper changer**, and **icon area horizontal spacing** "extensions
+* To fix Gnome grabbing ctrl+alt+up_arrow and ctrl+alt+down_arrow,"
+  * open `dconf`"
+  * navigate to `/org/gnome/desktop/wm/keybindings/`"
+  * edit `switch-to-workspace-up` and `switch-to-workspace-down`"
