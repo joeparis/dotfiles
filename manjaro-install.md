@@ -7,7 +7,7 @@ $ set -e
 $ sudo pacman -Syyu
 ```
 
-# start calling scripts
+Start calling scripts
 
 ## Base Install
 
