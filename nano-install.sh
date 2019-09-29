@@ -3,7 +3,7 @@
 
 # pre-req
 sudo apt update
-sudo DEBIAN_FRONTEND=noninteractive apt install libncursesw5-dev -y
+sudo DEBIAN_FRONTEND=noninteractive apt install libncursesw5-dev unzip -y
 
 curl -L https://www.nano-editor.org/dist/v4/nano-4.4.tar.gz -o $HOME/nano-4.4.tar.gz
 tar -xzf nano-4.4.tar.gz
