@@ -158,7 +158,8 @@ function prompt_command() {
   ps_rvm="${rvm_color}$(ruby_version_prompt)"
   ps_virtualenv="${venv_color}$(virtualenv_prompt)"
 
-  PS1="\n$ps_clock $ps_username$ps_uh_separator$ps_hostname $ps_path$ps_virtualenv$ps_rvm$ps_scm_prompt$ps_usermark "
+  # PS1="\n$ps_clock $ps_username$ps_uh_separator$ps_hostname $ps_path$ps_virtualenv$ps_rvm$ps_scm_prompt$ps_usermark "
+  PS1="\n$ps_username$ps_uh_separator$ps_hostname $ps_path$ps_virtualenv$ps_rvm$ps_scm_prompt$ps_usermark "
 }
 
 set_custom_colors
