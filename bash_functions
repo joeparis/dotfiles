@@ -1,33 +1,47 @@
-#!/bin/bash
-# adopted from https://medium.com/@bezgachev/a-simple-bash-script-to-update-visual-studio-code-insiders-edition-on-linux-6d7b6e662163
+#!/usr/bin/env bash
 
-function update-vscode {
-    file="/tmp/vscode-insider.tar.gz"
+# function swpps1 {
+#   joe_green="\[$(tput setaf 82)\]"
+#   joe_yellow="\[$(tput setaf 220)\]"
 
-    curl -L https://go.microsoft.com/fwlink/?LinkId=723968 -o $file
+#   if [ -z "${fancy_ps1}" ]
+#   then
+#     echo "${fancy_ps1}"
+#     unset fancy_ps1
+#   else
+#     echo "Fancy ps1 does not exist"
+#     fancy_ps1="$PS1"
+#   fi
 
+# }
 
-    if [ -z "$file" ]
-        then
-            echo "No file supplied, add the file"
-            exit 1
-    fi
-
-    if [[ $file == *.tar.gz ]]
-        then
-            # Proceed, it's a tar.gz file
-            # Make a temp directory for the vscode archive
-            mkdir /home/slava/temp
-            tar -xzf "$file" -C /home/slava/temp
-            # Move into the app folder
-            rm -rf /home/slava/Apps/code-insider/*
-            rsync -avhP /home/slava/temp/VSCode-linux-x64/* /home/slava/Apps/code-insider
-            # Delete the temp folder, cleanup
-            rm -rf /home/slava/temp
-            rm $file
-            exit 0
-    else    
-        echo "The file is not a .tar.gz archive"
-        exit 1
-    fi
+function swpps1 {
+  . ./bin/swp.sh
+  clear
 }
+
+# Convert Python code files to RTF for quick-and-easy formatted copy-paste into PowerPoint.
+function mkrtf { 
+    for i in *.py; do
+        [ -f "$i" ] || break
+        name=$"{i%.*}"
+        pygmentize -P "fontface=Cascadia Code" -f rtf -o "$name".rtf "$i"
+    done
+}
+
+# Make placeholder Python files for student assignments and labs.
+function mkpy {
+    for i in `seq -w 1 10`; do touch $i.py; done
+}
+
+# The following was birthed as the start of a function to quickly convert svg files exported from Microsoft Whiteboard
+# to a scaled png for readability sake.
+#
+#for i in *.svg; do
+#    [ -f "$i" ] || break
+#    #name=$(basename 19.10.16.svg .svg)
+#    name="${i%.*}"
+#    height=$(inkscape -H "$name".svg)
+#    inkscape -z -e "$name".png -a 0:0:250:"$height" -w 1500 -d 300 "$name".svg 
+#    #echo "${i%.*}"
+#done
