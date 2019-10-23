@@ -14,3 +14,5 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -h'                      # show sizes in human-readable sizes
 alias np='nano -w PKGBUILD'
 alias more=less
+
+alias hexedit='hexedit --color'
