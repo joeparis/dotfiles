@@ -203,4 +203,4 @@ wget -O - https://raw.githubusercontent.com/joeparis/dotfiles/master/wrap-up-ins
 * To fix Gnome grabbing ctrl+alt+up_arrow and ctrl+alt+down_arrow,"
   * open `dconf`"
   * navigate to `/org/gnome/desktop/wm/keybindings/`"
-  * edit `switch-to-workspace-up` and `switch-to-workspace-down`"
+  * edit `switch-to-workspace-up`, `switch-to-workspace-down`, `move-to-workspace-down`, and `move-to-workspace-up`"
