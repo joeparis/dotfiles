@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-sudo -H python3 get-pip.py
+python3 get-pip.py --user
 rm get-pip.py
 pip3 install --user pipx
 $HOME/.local/bin/pipx install black
@@ -12,6 +12,7 @@ $HOME/.local/bin/pipx install pydocstyle
 $HOME/.local/bin/pipx install pycodestyle
 $HOME/.local/bin/pipx install terminal-colors
 $HOME/.local/bin/pipx install Pygments
+$HOME/.local/bin/pipx install glances
 
 echo -e '\n## Python pipx\neval "$(register-python-argcomplete pipx)"' >> $HOME/.bashrc
 
