@@ -12,7 +12,6 @@ $HOME/.local/bin/pipx install pydocstyle
 $HOME/.local/bin/pipx install pycodestyle
 $HOME/.local/bin/pipx install terminal-colors
 $HOME/.local/bin/pipx install Pygments
-$HOME/.local/bin/pipx install glances
 
 echo -e '\n## Python pipx\neval "$(register-python-argcomplete pipx)"' >> $HOME/.bashrc
 
